@@ -1,13 +1,30 @@
 <!DOCTYPE html>
+<!--
+{% macro pagination(url, page) %}
+    <ul class="uk-pagination">
+        {% if page.has_previous %}
+            <li><a href="{{ url }}{{ page.page_index - 1 }}"><i class="uk-icon-angle-double-left"></i></a></li>
+        {% else %}
+            <li class="uk-disabled"><span><i class="uk-icon-angle-double-left"></i></span></li>
+        {% endif %}
+            <li class="uk-active"><span>{{ page.page_index }}</span></li>
+        {% if page.has_next %}
+            <li><a href="{{ url }}{{ page.page_index + 1 }}"><i class="uk-icon-angle-double-right"></i></a></li>
+        {% else %}
+            <li class="uk-disabled"><span><i class="uk-icon-angle-double-right"></i></span></li>
+        {% endif %}
+    </ul>
+{% endmacro %}
+-->
 <html>
 <head>
     <meta charset="utf-8" />
     {% block meta %}<!-- block meta  -->{% endblock %}
-    <title>{% block title %} ? {% endblock %}</title>
+    <title>{% block title %} ? {% endblock %} — Kyle's Blog</title>
     <link rel="stylesheet" href="/static/css/uikit.min.css">
     <link rel="stylesheet" href="/static/css/uikit.gradient.min.css">
     <link rel="stylesheet" href="/static/css/awesome.css" />
-    <link rel="icon" href="/static/img/favicon.ico"/>
+    <link rel="shortcut icon" href="/static/img/favicon.ico" />
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/sha1.min.js"></script>
     <script src="/static/js/uikit.min.js"></script>
@@ -19,11 +36,10 @@
 <body>
     <nav class="uk-navbar uk-navbar-attached uk-margin-bottom">
         <div class="uk-container uk-container-center">
-            <a href="/" class="uk-navbar-brand">LanKun's Blog</a>
+            <a href="/" class="uk-navbar-brand">Kyle's Blog</a>
             <ul class="uk-navbar-nav">
-                <li data-url="blogs"><a href="/"><i class="uk-icon-home"></i> 日志</a></li>
-                <li><a target="_blank" href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000"><i class="uk-icon-book"></i> 教程</a></li>
-                <li><a target="_blank" href="https://github.com/michaelliao/awesome-python3-webapp"><i class="uk-icon-code"></i> 源码</a></li>
+                <li data-url="blogs"><a href="/"><i class="uk-icon-home"></i> Blog</a></li>
+                <li><a href="/about"><i class="uk-icon-code"></i> About</a></li>
             </ul>
             <div class="uk-navbar-flip">
                 <ul class="uk-navbar-nav">
@@ -57,9 +73,11 @@
     <div class="uk-margin-large-top" style="background-color:#eee; border-top:1px solid #ccc;">
         <div class="uk-container uk-container-center uk-text-center">
             <div class="uk-panel uk-margin-top uk-margin-bottom">
-                <p>Powered by <a href="http://www.python.org">Python</a>. Copyright &copy; 2017. [<a href="/manage/" target="_blank">Manage</a>]</p>
-                <p>All rights reserved.</p>
+                <p>Backend powered by <a href="www.python.org">Python</a>. Copyright &copy; 2017.</p>
+                <p>Kyle's Blog</p>
+                <a target="_blank" href="http://www.w3.org/TR/html5/"><i class="uk-icon-html5" style="font-size:64px; color: rgb(41, 133, 255);"></i></a>
             </div>
+
         </div>
     </div>
 </body>

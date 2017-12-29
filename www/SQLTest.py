@@ -6,7 +6,7 @@ import orm, asyncio
 from models import User, Blog, Comment
 
 async def test(loop):
-    await orm.create_pool(loop, user='lantern', password='lanternblog', db='awesome')
+    await orm.create_pool(loop, user='www-data', password='www-data', db='awesome')
     u = User(name='Kyle', email='kylelan329@qq.com', passwd='123456', image='about:blank')
     await u.save()
 
